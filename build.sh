@@ -11,6 +11,7 @@ if [ ! -f "$(which rpmdev-setuptree)" ]; then echo "please install 'rpmdevtools'
 /usr/bin/rpmdev-setuptree
 
 cp -f ${whereami}/runit.spec ~/rpmbuild/SPECS/
+cp -f ${whereami}/*.tar.gz    ~/rpmbuild/SOURCES/
 cp -f ${whereami}/*.patch    ~/rpmbuild/SOURCES/
 /usr/bin/spectool -C ~/rpmbuild/SOURCES/ -g ${whereami}/runit.spec 
 

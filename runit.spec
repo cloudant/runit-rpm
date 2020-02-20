@@ -1,5 +1,5 @@
 #
-# spec file for package runit (Version 2.1.1)
+# spec file for package runit (Version 2.1.2)
 #
 # Copyright (c) 2010 Ian Meyer <ianmmeyer@gmail.com>
 
@@ -7,7 +7,7 @@
 ## --with dietlibc ...  statically links against dietlibc
 
 Name:           runit
-Version:        2.1.1
+Version:        2.1.2
 Release:        6%{?_with_dietlibc:diet}%{?dist}
 
 Group:          System/Base
@@ -19,7 +19,6 @@ License:        BSD
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
 Url:            http://smarden.org/runit/
-Source:         runit-%{version}.tar.gz
 Patch:          runit-2.1.1-etc-service.patch
 Patch1:         runit-2.1.1-runsvdir-path-cleanup.patch
 Patch2:         runit-2.1.1-term-hup-option.patch
@@ -47,7 +46,10 @@ Authors:
     Gerrit Pape <pape@smarden.org>
 
 %prep
-%setup -q -n admin/%{name}-%{version}
+#%setup -q -n admin/%{name}-%{version}
+ls 
+ls %{_sourcedir}
+tar xvzf %{_sourcedir}/runit-%{version}.tar.gz -C .
 pushd src
 echo "%{?_with_dietlibc:diet -Os }%__cc $RPM_OPT_FLAGS" >conf-cc
 echo "%{?_with_dietlibc:diet -Os }%__cc -Os -pipe"      >conf-ld
