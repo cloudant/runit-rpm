@@ -19,7 +19,7 @@ License:        BSD
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
 Url:            http://smarden.org/runit/
-Source:         http://smarden.org/runit/runit-%{version}.tar.gz
+Source:         runit-%{version}.tar.gz
 Patch:          runit-2.1.1-etc-service.patch
 Patch1:         runit-2.1.1-runsvdir-path-cleanup.patch
 Patch2:         runit-2.1.1-term-hup-option.patch
